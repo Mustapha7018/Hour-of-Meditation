@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/widgets/buttons.dart';
 import 'package:hom_app/features/auth/presentation/pages/onboarding/onboarding3.dart';
+import 'package:hom_app/features/auth/presentation/pages/sign_in/sign_in.dart';
 
 import '../../../../../core/themes/body_padding.dart';
 import '../../../../../core/themes/font_styles.dart';
@@ -63,9 +64,8 @@ class GetStartedScreen extends StatelessWidget {
                 icon: Image.asset('assets/images/google_img.png'),
                 iconTextSpacing: 12,
                 text: 'Continue with Google',
-                textStyle: FontStyles.bodySemibold.copyWith(
-                  color: AppColor.greyscale900
-                ),
+                textStyle: FontStyles.bodySemibold
+                    .copyWith(color: AppColor.greyscale900),
                 height: 60,
                 width: double.infinity,
                 colorFill: AppColor.white,
@@ -78,9 +78,7 @@ class GetStartedScreen extends StatelessWidget {
               ),
               CustomButton.elevated(
                 text: 'Get started',
-                  textStyle: FontStyles.bodyLarge.copyWith(
-                  color: AppColor.white
-                ),
+                textStyle: FontStyles.bodyLarge.copyWith(color: AppColor.white),
                 height: 60,
                 width: double.infinity,
                 colorFill: AppColor.primary300,
@@ -89,9 +87,14 @@ class GetStartedScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Text(
-                'I Already Have an Account',
-                style: FontStyles.bodyLarge,
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, SignInScreen.route());
+                },
+                child: const Text(
+                  'I Already Have an Account',
+                  style: FontStyles.bodyLarge,
+                ),
               ),
             ],
           ),

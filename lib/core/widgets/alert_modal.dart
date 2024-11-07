@@ -25,6 +25,7 @@ class CustomModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: AppColor.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40),
       ),
@@ -46,17 +47,17 @@ class CustomModal extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
 
             // Message text
             Text(
               message,
               style: FontStyles.bodyRegular.copyWith(
-                fontSize: 16,
+                fontSize: 18,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 32),
 
             // Optional button
             if (withButton && buttonText != null)
@@ -64,6 +65,10 @@ class CustomModal extends StatelessWidget {
                 text: buttonText!,
                 onPressed: onButtonPressed,
                 width: double.infinity,
+                colorFill: AppColor.primary500,
+                textStyle: FontStyles.bodyLarge.copyWith(
+                  color: AppColor.white,
+                ),
               ),
           ],
         ),

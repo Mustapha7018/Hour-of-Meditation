@@ -32,7 +32,7 @@ class AppColor {
   static const Color white = Colors.white;
 
   //TRANSPARENT BLUE
-  static const Color tarnsparentBlue = Color.fromRGBO(245, 247, 251, 1);
+  static const Color transparentBlue = Color.fromRGBO(245, 247, 251, 8);
   static const Color transparent = Colors.transparent;
   
   //GRADIENT
