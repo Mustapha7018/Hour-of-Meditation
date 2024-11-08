@@ -50,7 +50,7 @@ class _MeditationGoalScreenState extends State<MeditationGoalScreen> {
       appBar: AppBar(
         backgroundColor: AppColor.white,
         leading: InkWell(
-          child: Image.asset('assets/images/left_arrow.png'),
+          child: Image.asset('assets/icons/left_arrow.png'),
           onTap: () {
             Navigator.pop(context);
           },

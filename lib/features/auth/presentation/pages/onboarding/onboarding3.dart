@@ -26,7 +26,7 @@ class _ChooseGenderScreenState extends State<ChooseGenderScreen> {
       appBar: AppBar(
         backgroundColor: AppColor.white,
         leading: InkWell(
-          child: Image.asset('assets/images/left_arrow.png'),
+          child: Image.asset('assets/icons/left_arrow.png'),
           onTap: () {
             Navigator.pop(context);
           },
@@ -58,7 +58,7 @@ class _ChooseGenderScreenState extends State<ChooseGenderScreen> {
                   selectedIndex = 0;
                 });
               },
-              label: "I am a male",
+              label: "I am male",
             ),
             const SizedBox(height: 30),
             const Divider(height: 1),

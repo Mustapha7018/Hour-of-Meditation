@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hom_app/core/widgets/app_bar.dart';
+import 'package:hom_app/core/widgets/display_card.dart';
 
 import '../../../../../core/themes/body_padding.dart';
+import '../../../../../core/themes/font_styles.dart';
 import '../../../../../core/themes/hom_palette.dart';
+import '../../../../../core/widgets/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
-  static route() =>
-      MaterialPageRoute(builder: (context) => const HomePage());
+  static route() => MaterialPageRoute(builder: (context) => const HomePage());
   const HomePage({super.key});
 
   @override
@@ -13,27 +16,147 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.white,
-        leading: InkWell(
-          child: Image.asset('assets/images/left_arrow.png'),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            automaticallyImplyLeading: false,
+            pinned: false,
+            floating: true,
+            snap: true,
+            backgroundColor: AppColor.white,
+            title: CustomAppBar(
+              hasBackButton: false,
+              fieldText: 'Hello, Dr. Adewusi',
+              rightIcon1: Image.asset('assets/icons/search.png'),
+              rightIcon2: Image.asset('assets/icons/bell.png'),
+            ),
+          ),
+          SliverPadding(
+            padding: BodyPadding.medium,
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  CustomCard(
+                    title: 'Welcome HoM',
+                    description: 'Get connected with God and yourself on a deeper level.',
+                    image: Image.asset('assets/images/square.png'),
+                    cardColor: AppColor.primary400,
+                  ),
+                  const SizedBox(height: 28),
+                  CustomCard(
+                    title: 'Watch HoM Live',
+                    titleStyle: FontStyles.bodyMedium.copyWith(
+                      fontSize: 20,
+                      color: AppColor.primary400,
+                    ),
+                    description: 'Every Saturday at 9AM MST',
+                    descriptionStyle: FontStyles.bodyMedium.copyWith(
+                      color: AppColor.greyscale700,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    elevation: 0,
+                    boxShadow: BoxShadow(
+                      color: AppColor.greyscale700.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Explore by Series',
+                        style: FontStyles.heading4.copyWith(
+                          color: AppColor.primary400,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      InkWell(
+                        child: Image.asset('assets/icons/right_arrow.png'),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  CustomCard(
+                    title: 'Physical Healing',
+                    titleStyle: FontStyles.bodyMedium.copyWith(
+                      fontSize: 20,
+                      color: AppColor.primary400,
+                    ),
+                    description: 'Experience divine healing in your physical body.',
+                    descriptionStyle: FontStyles.bodyMedium.copyWith(
+                      color: AppColor.greyscale700,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    elevation: 0,
+                    boxShadow: BoxShadow(
+                      color: AppColor.greyscale700.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
+                    image: Image.asset('assets/images/square.png'),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomCard(
+                    title: 'Divine Favour',
+                    titleStyle: FontStyles.bodyMedium.copyWith(
+                      fontSize: 20,
+                      color: AppColor.primary400,
+                    ),
+                    description: 'Favour is the next step you need. Step into that reality with this series.',
+                    descriptionStyle: FontStyles.bodyMedium.copyWith(
+                      color: AppColor.greyscale700,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    elevation: 0,
+                    boxShadow: BoxShadow(
+                      color: AppColor.greyscale700.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
+                    image: Image.asset('assets/images/drop.png'),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomCard(
+                    title: 'Divine Secrets',
+                    titleStyle: FontStyles.bodyMedium.copyWith(
+                      fontSize: 20,
+                      color: AppColor.primary400,
+                    ),
+                    description: 'Favour is the next step you need. Step into that reality with this series.',
+                    descriptionStyle: FontStyles.bodyMedium.copyWith(
+                      color: AppColor.greyscale700,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    elevation: 0,
+                    boxShadow: BoxShadow(
+                      color: AppColor.greyscale700.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
+                    image: Image.asset('assets/images/drop.png'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
-      body: const Padding(
-        padding: BodyPadding.medium,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('THIS IS THE HOMEPAGE', style: TextStyle(fontSize: 30),),
-          ],
-        ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onTabTapped,
       ),
     );
   }

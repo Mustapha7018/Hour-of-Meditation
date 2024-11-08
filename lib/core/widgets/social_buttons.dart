@@ -17,7 +17,7 @@ class SocialButton extends StatelessWidget {
     return ElevatedButton( 
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        surfaceTintColor: AppColor.transparent,
+        backgroundColor: AppColor.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
           side: const BorderSide(color: AppColor.greyscale200),

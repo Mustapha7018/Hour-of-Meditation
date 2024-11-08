@@ -22,7 +22,7 @@ class _OtpScreenState extends State<OtpScreen> {
       appBar: AppBar(
         backgroundColor: AppColor.white,
         leading: InkWell(
-          child: Image.asset('assets/images/left_arrow.png'),
+          child: Image.asset('assets/icons/left_arrow.png'),
           onTap: () {
             Navigator.pop(context);
           },
@@ -41,37 +41,33 @@ class _OtpScreenState extends State<OtpScreen> {
               height: 12,
             ),
             const Text(
-              'We have sent the OTP verification to your email address. Check your email and enter the code below.',
+              'We have sent the OTP verification to your email address.Check your email and enter the code below.',
               style: FontStyles.bodyRegular,
             ),
-            const SizedBox(
-              height: 55,
-            ),
+            const SizedBox(height: 50,),
             OtpTextField(
               numberOfFields: 4,
               textStyle: FontStyles.heading4,
               borderColor: AppColor.greyscale200,
               fillColor: AppColor.transparentBlue,
-              fieldHeight: 60,
+              fieldHeight: 65,
               fieldWidth: 85,
-              margin: const EdgeInsets.only(right: 10),
+              contentPadding: const EdgeInsets.all(10),
               borderRadius: BorderRadius.circular(16),
               cursorColor: AppColor.greyscale900,
               focusedBorderColor: AppColor.primary500,
-              styles: [
-                FontStyles.heading4.copyWith(),
+              styles: const [
+                FontStyles.heading4,
                 FontStyles.heading4,
                 FontStyles.heading4,
                 FontStyles.heading4,
               ],
               showFieldAsBox: true,
               onCodeChanged: (String code) {},
-              keyboardType: const TextInputType.numberWithOptions(
-                  decimal: false), 
+              // keyboardType: const TextInputType.numberWithOptions(
+              //     decimal: false), 
             ),
-            const SizedBox(
-              height: 50,
-            ),
+            const SizedBox(height: 30,),
             const Center(
               child: Column(
                 children: [

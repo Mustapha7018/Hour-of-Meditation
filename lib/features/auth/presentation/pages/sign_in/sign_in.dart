@@ -28,7 +28,7 @@ class _SignInScreenState extends State<SignInScreen> {
       appBar: AppBar(
         backgroundColor: AppColor.white,
         leading: InkWell(
-          child: Image.asset('assets/images/left_arrow.png'),
+          child: Image.asset('assets/icons/left_arrow.png'),
           onTap: () {
             Navigator.pop(context);
           },
@@ -136,15 +136,15 @@ class _SignInScreenState extends State<SignInScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SocialButton(
-                  assetPath: 'assets/images/google_img.png',
+                  assetPath: 'assets/icons/google_img.png',
                   onPressed: () {},
                 ),
                 SocialButton(
-                  assetPath: 'assets/images/apple_logo.png',
+                  assetPath: 'assets/icons/apple_logo.png',
                   onPressed: () {},
                 ),
                 SocialButton(
-                  assetPath: 'assets/images/facebook_logo.png',
+                  assetPath: 'assets/icons/facebook_logo.png',
                   onPressed: () {},
                 ),
               ],

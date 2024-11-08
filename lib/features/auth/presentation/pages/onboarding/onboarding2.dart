@@ -18,11 +18,11 @@ class GetStartedScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.primary200,
       body: Padding(
-        padding: BodyPadding.medium,
+        padding: BodyPadding.defaultPadding,
         child: Center(
           child: Column(
             children: [
-              Image.asset('assets/images/sphere.png'),
+              Image.asset('assets/images/big_sphere.png'),
 
               const SizedBox(
                 height: 30,
@@ -61,7 +61,7 @@ class GetStartedScreen extends StatelessWidget {
                 height: 30,
               ),
               CustomButton.elevated(
-                icon: Image.asset('assets/images/google_img.png'),
+                icon: Image.asset('assets/icons/google_img.png'),
                 iconTextSpacing: 12,
                 text: 'Continue with Google',
                 textStyle: FontStyles.bodySemibold
@@ -70,7 +70,7 @@ class GetStartedScreen extends StatelessWidget {
                 width: double.infinity,
                 colorFill: AppColor.white,
                 onPressed: () {
-                  Navigator.push(context, ChooseGenderScreen.route());
+                  
                 },
               ),
               const SizedBox(
@@ -82,7 +82,9 @@ class GetStartedScreen extends StatelessWidget {
                 height: 60,
                 width: double.infinity,
                 colorFill: AppColor.primary300,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, ChooseGenderScreen.route());
+                },
               ),
               const SizedBox(
                 height: 30,

@@ -15,7 +15,7 @@ class CustomCheckButton extends StatelessWidget {
     return GestureDetector(
       onTap: () => onChanged(!isChecked),
       child: Image.asset(
-        isChecked ? 'assets/images/checked.png' : 'assets/images/unchecked.png',
+        isChecked ? 'assets/icons/checked.png' : 'assets/icons/unchecked.png',
         width: 25,
         height: 25,
       ),
