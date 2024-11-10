@@ -35,7 +35,7 @@ class FontStyles {
   );
 
   static const TextStyle heading4 = TextStyle(
-    fontSize: 24,
+    fontSize: 21,
     fontWeight: FontWeight.bold,
     height: 1.5,
     color: defaultColor,

@@ -63,7 +63,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           onTap: onRightIcon2Pressed,
           child: rightIcon2,
         ),
-        const SizedBox(width: 15,),
+        SizedBox(width: rightIcon2 != null ? 0 : 15)
       ],
     );
   }

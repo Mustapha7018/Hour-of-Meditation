@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/widgets/app_bar.dart';
 import 'package:hom_app/core/widgets/display_card.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/explore_series.dart';
 
 import '../../../../../core/themes/body_padding.dart';
 import '../../../../../core/themes/font_styles.dart';
 import '../../../../../core/themes/hom_palette.dart';
-import '../../../../../core/widgets/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
   static route() => MaterialPageRoute(builder: (context) => const HomePage());
@@ -16,13 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
-
-  void _onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +33,8 @@ class _HomePageState extends State<HomePage> {
               fieldText: 'Hello, Dr. Adewusi',
               rightIcon1: Image.asset('assets/icons/search.png'),
               rightIcon2: Image.asset('assets/icons/bell.png'),
+              onRightIcon1Pressed: () {
+              },
             ),
           ),
           SliverPadding(
@@ -84,6 +79,9 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       InkWell(
+                        onTap: () {
+                          Navigator.push(context, ExploreSeries.route());
+                        },
                         child: Image.asset('assets/icons/right_arrow.png'),
                       ),
                     ],
@@ -153,10 +151,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onTabTapped,
       ),
     );
   }

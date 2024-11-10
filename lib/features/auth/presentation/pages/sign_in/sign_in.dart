@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/font_styles.dart';
 import 'package:hom_app/core/widgets/buttons.dart';
-import 'package:hom_app/features/auth/presentation/pages/main/home_page.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/home.dart';
 import 'package:hom_app/features/auth/presentation/pages/sign_in/forgot_password.dart';
 
 import '../../../../../core/themes/body_padding.dart';
@@ -157,7 +157,7 @@ class _SignInScreenState extends State<SignInScreen> {
               width: double.infinity,
               colorFill: AppColor.primary300,
               onPressed: () {
-                Navigator.push(context, HomePage.route());
+                Navigator.push(context, HomeScreens.route());
               },
               boxShadow: [
                 BoxShadow(

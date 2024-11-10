@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../../core/themes/hom_palette.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -17,15 +18,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
       showUnselectedLabels: true,
       currentIndex: currentIndex,
       onTap: onTap,
-      // backgroundColor: AppColor.white,
       selectedItemColor: AppColor.primary400,
       unselectedItemColor: AppColor.greyscale500,
       elevation: 0,
+      selectedLabelStyle: GoogleFonts.spaceMono(),
+      unselectedLabelStyle: GoogleFonts.spaceMono(),
       items: [
         BottomNavigationBarItem(
-          // backgroundColor: Colors.white,
           icon: Padding(
-            padding: const EdgeInsets.all(8.0), // Adjust padding as needed
+            padding: const EdgeInsets.all(8.0),
             child: Image.asset(
               currentIndex == 0
                   ? 'assets/icons/home_active.png'
