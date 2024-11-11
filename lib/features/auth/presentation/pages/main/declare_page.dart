@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/body_padding.dart';
 import 'package:hom_app/core/widgets/app_bar.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/audio_play_screen.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/congratulation_page.dart';
 import '../../widgets/audio_tile.dart';
 
 class DeclareScreen extends StatelessWidget {
@@ -27,9 +28,7 @@ class DeclareScreen extends StatelessWidget {
         hasBackButton: false,
         fieldText: 'Declare',
         rightIcon1: Image.asset('assets/icons/search.png'),
-        onRightIcon1Pressed: () {
-          // Define the search icon action
-        },
+        onRightIcon1Pressed: () {},
       ),
       body: Padding(
         padding: BodyPadding.medium,
@@ -47,7 +46,7 @@ class DeclareScreen extends StatelessWidget {
                     builder: (context) => AudioPlayerScreen(
                       title: item["title"]!,
                       totalDuration: item["duration"]!,
-                      currentTime: '0:00', 
+                      currentTime: '0:00',
                     ),
                   ),
                 );
