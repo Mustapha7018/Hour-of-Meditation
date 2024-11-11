@@ -5,13 +5,13 @@ import '../../../../core/themes/font_styles.dart';
 import '../../../../core/widgets/circular_image.dart';
 
 class ProfileOptionTile extends StatelessWidget {
-  final String imagePath;
+  final String? imagePath; 
   final String label;
   final VoidCallback? onTap;
 
   const ProfileOptionTile({
     super.key,
-    required this.imagePath,
+    this.imagePath, 
     required this.label,
     this.onTap,
   });
@@ -25,8 +25,10 @@ class ProfileOptionTile extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircularImage(imagePath: imagePath),
-            const SizedBox(width: 20),
+            if (imagePath != null && imagePath!.isNotEmpty)
+              CircularImage(imagePath: imagePath!),
+            if (imagePath != null && imagePath!.isNotEmpty)
+              const SizedBox(width: 20),
             // Label
             Expanded(
               child: Text(

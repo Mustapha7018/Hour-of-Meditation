@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hom_app/core/themes/font_styles.dart';
-import 'package:hom_app/core/themes/hom_palette.dart';
 import 'dart:async';
 
 import 'package:hom_app/features/auth/presentation/pages/onboarding/onboarding2.dart';
+
+import '../../../../../core/widgets/big_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -50,21 +50,11 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: FadeTransition(
-          opacity: _animation,
-          child: ScaleTransition(
-            scale: _animation,
-            child: Text(
-              'HOM',
-              style: FontStyles.heading1.copyWith(
-                fontSize: 250,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Porto',
-                color: AppColor.primary400,
-              ),
-            ),
-          ),
+      body: FadeTransition(
+        opacity: _animation,
+        child: ScaleTransition(
+          scale: _animation,
+          child: const BigText(),
         ),
       ),
     );

@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/hom_palette.dart';
 
 class AppTheme {
-  static OutlineInputBorder _border([Color color = AppColor.greyscale500]) => OutlineInputBorder(
-        borderSide: BorderSide(
-          color: color,
-          width: 3,
-        ),
-        borderRadius: BorderRadius.circular(10),
+  static OutlineInputBorder _border([Color color = AppColor.greyscale500, double borderRadius = 16]) => 
+      OutlineInputBorder(
+        borderRadius: BorderRadius.circular(borderRadius),
+        borderSide: BorderSide(color: color, width: 1.5),
       );
 
   // Dark Theme
@@ -23,12 +21,15 @@ class AppTheme {
       bodyMedium: TextStyle(fontSize: 14, color: Colors.white70),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(20),
       filled: true,
-      fillColor: Colors.grey[800], // Dark theme fill color
+      fillColor: Colors.grey[800],
+      contentPadding: const EdgeInsets.symmetric(vertical: 16),
       hintStyle: TextStyle(color: Colors.grey[500]),
-      enabledBorder: _border(),
-      focusedBorder: _border(AppColor.greyscale500),
+      prefixIconColor: Colors.grey, 
+      suffixIconColor: Colors.grey, 
+      enabledBorder: _border(AppColor.greyscale500, 16),
+      focusedBorder: _border(Colors.black, 20),
+      border: _border(AppColor.greyscale500, 16),
     ),
   );
 
@@ -45,13 +46,16 @@ class AppTheme {
       titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
       bodyMedium: TextStyle(fontSize: 14, color: Colors.black87),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(20),
-      filled: true,
-      fillColor: Colors.grey[200], // Light theme fill color
-      hintStyle: TextStyle(color: Colors.grey[600]),
-      enabledBorder: _border(),
-      focusedBorder: _border(AppColor.greyscale500),
-    ),
+    // inputDecorationTheme: InputDecorationTheme(
+    //   filled: true,
+    //   fillColor: Colors.grey[200],
+    //   contentPadding: const EdgeInsets.symmetric(vertical: 16),
+    //   hintStyle: TextStyle(color: Colors.grey[600]),
+    //   prefixIconColor: Colors.grey, 
+    //   suffixIconColor: Colors.grey, 
+    //   enabledBorder: _border(AppColor.greyscale500, 16),
+    //   focusedBorder: _border(Colors.black, 20),
+    //   border: _border(AppColor.greyscale500, 16),
+    // ),
   );
 }
