@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/font_styles.dart';
 import 'package:hom_app/core/widgets/buttons.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/home.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/home_page.dart';
 import 'package:hom_app/features/auth/presentation/widgets/check_button.dart';
 
@@ -134,7 +135,7 @@ void _showSuccessModal(BuildContext context) {
   // Automatically navigate to HomePage after a delay
   Future.delayed(const Duration(seconds: 2), () {
     Navigator.of(context).pop(); // Close the modal
-    Navigator.pushReplacement(context, HomePage.route()); 
+    Navigator.pushReplacement(context, HomeScreens.route()); 
   });
 }
 
