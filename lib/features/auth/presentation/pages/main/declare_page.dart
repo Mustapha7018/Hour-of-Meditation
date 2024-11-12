@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/body_padding.dart';
 import 'package:hom_app/core/widgets/app_bar.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/audio_play_screen.dart';
-import 'package:hom_app/features/auth/presentation/pages/main/congratulation_page.dart';
 import '../../widgets/audio_tile.dart';
 
 class DeclareScreen extends StatelessWidget {

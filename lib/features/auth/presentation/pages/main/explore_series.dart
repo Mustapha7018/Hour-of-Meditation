@@ -74,7 +74,7 @@ class _ExploreSeriesState extends State<ExploreSeries> {
                     ),
                   );
                 },
-                childCount: 14, // Total number of cards
+                childCount: 14, 
               ),
             ),
           ),

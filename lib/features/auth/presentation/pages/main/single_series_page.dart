@@ -75,7 +75,7 @@ class _SingleSeriesPageState extends State<SingleSeriesPage> {
                     ),
                   );
                 },
-                childCount: 8, // Total number of cards
+                childCount: 8, 
               ),
             ),
           ),

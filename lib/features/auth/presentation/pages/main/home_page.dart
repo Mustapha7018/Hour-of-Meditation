@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hom_app/core/widgets/app_bar.dart';
 import 'package:hom_app/core/widgets/display_card.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/explore_series.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/search_screen.dart';
 
 import '../../../../../core/themes/body_padding.dart';
 import '../../../../../core/themes/font_styles.dart';
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
               rightIcon1: Image.asset('assets/icons/search.png'),
               rightIcon2: Image.asset('assets/icons/bell.png'),
               onRightIcon1Pressed: () {
+                Navigator.push(context, SearchScreen.route());
               },
             ),
           ),

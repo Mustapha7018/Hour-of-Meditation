@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/hom_palette.dart';
-
 import '../themes/font_styles.dart';
 
 class CustomSearchField extends StatefulWidget {
-  const CustomSearchField({super.key});
+  final Function(String) onSearch;
+  final bool showCloseIcon;
+
+  const CustomSearchField({
+    super.key,
+    required this.onSearch,
+    this.showCloseIcon = false,
+  });
 
   @override
   _CustomSearchFieldState createState() => _CustomSearchFieldState();
@@ -29,6 +35,15 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
     setState(() {
       _isFocused = _controller.text.isNotEmpty;
     });
+
+    widget.onSearch(_controller.text);
+  }
+
+  @override
+  void dispose() {
+    _controller.removeListener(_onTextChanged);
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,7 +71,9 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Image.asset(
-                  'assets/icons/tune.png',
+                  widget.showCloseIcon 
+                      ? 'assets/icons/close_icon.png'
+                      : 'assets/icons/tune.png',
                 ),
               ),
               hintText: 'Search',
@@ -92,6 +109,8 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
                         _controller.text = suggestion;
                         _isFocused = false;
                       });
+
+                      widget.onSearch(suggestion);
                     },
                   ))
               .toList(),

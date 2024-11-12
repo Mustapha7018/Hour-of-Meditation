@@ -38,13 +38,15 @@ class HelpCenterScreen extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  const Padding(
+                  Padding(
                     padding: BodyPadding.medium,
                     child: Column(
                       children: [
-                        CustomSearchField(),
-                        SizedBox(height: 18),
-                        Expanded(child: FAQList()), 
+                        CustomSearchField(onSearch: (searchText){
+                          debugPrint(searchText);
+                        },),
+                        const SizedBox(height: 18),
+                        const Expanded(child: FAQList()), 
                       ],
                     ),
                   ),
