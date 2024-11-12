@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/font_styles.dart';
 import 'package:hom_app/core/widgets/buttons.dart';
+import 'package:hom_app/features/auth/presentation/pages/main/home.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/home_page.dart';
 import 'package:hom_app/features/auth/presentation/widgets/check_button.dart';
 
@@ -121,7 +122,7 @@ void _showSuccessModal(BuildContext context) {
         withButton: true,
         buttonText: 'Go to Home',
         onButtonPressed: () {
-          Navigator.push(context, HomePage.route());
+          Navigator.push(context, HomeScreens.route());
         },
         modalImage: 'assets/images/account_image.png',
 
