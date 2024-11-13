@@ -55,7 +55,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
             const Center(
               child: ProfileIcon(imageUrl: 'assets/images/person.png'),
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const CustomInputField(
               label: 'Full Name',
               initialValue: 'Dr. Emmanuel Adewusi',

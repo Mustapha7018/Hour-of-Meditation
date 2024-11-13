@@ -33,36 +33,42 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          if (hasBackButton) InkWell(
-          child: Image.asset('assets/icons/left_arrow.png'),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ), 
-          if (!hasBackButton)
-            Image.asset('assets/icons/sphere.png'),
+          if (hasBackButton)
+            InkWell(
+              child: Image.asset('assets/icons/left_arrow.png'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          if (!hasBackButton) Image.asset('assets/icons/sphere.png'),
           const SizedBox(width: 12),
-          Text(
-            fieldText,
-            style: FontStyles.heading4.copyWith(
-              color: AppColor.primary400,
-              fontWeight: FontWeight.w400,
-            )
+          Flexible(
+            child: Text(
+              fieldText,
+              style: FontStyles.heading4.copyWith(
+                color: AppColor.primary400,
+                fontWeight: FontWeight.w400,
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
           ),
         ],
       ),
       actions: [
         if (rightIcon1 != null) // First action icon on the right
           InkWell(
-          onTap: onRightIcon1Pressed,
-          child: rightIcon1,
+            onTap: onRightIcon1Pressed,
+            child: rightIcon1,
+          ),
+        const SizedBox(
+          width: 20,
         ),
-        const SizedBox(width: 20,),
         if (rightIcon2 != null) // Second action icon on the right
           InkWell(
-          onTap: onRightIcon2Pressed,
-          child: rightIcon2,
-        ),
+            onTap: onRightIcon2Pressed,
+            child: rightIcon2,
+          ),
         SizedBox(width: rightIcon2 != null ? 0 : 15)
       ],
     );

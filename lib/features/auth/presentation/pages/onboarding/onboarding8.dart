@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hom_app/core/themes/font_styles.dart';
 import 'package:hom_app/core/widgets/buttons.dart';
 import 'package:hom_app/features/auth/presentation/pages/main/home.dart';
-import 'package:hom_app/features/auth/presentation/pages/main/home_page.dart';
 import 'package:hom_app/features/auth/presentation/widgets/check_button.dart';
 
 import '../../../../../core/themes/body_padding.dart';
@@ -21,7 +20,7 @@ class CreateAccountScreen extends StatefulWidget {
 }
 
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
-  bool _rememberMe = false; 
+  bool _rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +116,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   }
 }
 
-
 void _showSuccessModal(BuildContext context) {
   showDialog(
     context: context,
@@ -125,7 +123,8 @@ void _showSuccessModal(BuildContext context) {
       // Display the modal dialog
       return const CustomModal(
         headText: "Sign Up Successful!",
-        message: "Your account has been created. Welcome to the Hour Of Meditation.",
+        message:
+            "Your account has been created. Welcome to the Hour Of Meditation.",
         withButton: false,
         modalImage: 'assets/images/account_image.png',
       );
@@ -135,8 +134,6 @@ void _showSuccessModal(BuildContext context) {
   // Automatically navigate to HomePage after a delay
   Future.delayed(const Duration(seconds: 2), () {
     Navigator.of(context).pop(); // Close the modal
-    Navigator.pushReplacement(context, HomeScreens.route()); 
+    Navigator.pushReplacement(context, HomeScreens.route());
   });
 }
-
-
