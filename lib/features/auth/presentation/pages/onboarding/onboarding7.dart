@@ -35,74 +35,71 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
       ),
       body: Padding(
         padding: BodyPadding.medium,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Complete Your Profile',
-              style: FontStyles.heading3SemiBold,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const Text(
-              "Don't worry, only you can see your personal data. No one else will be able to see it.",
-              style: FontStyles.bodyRegular,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Center(
-              child: ProfileIcon(imageUrl: 'assets/images/person.png'),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomInputField(
-              label: 'Full Name',
-              initialValue: 'Dr. Emmanuel Adewusi',
-            ),
-            const SizedBox(height: 20),
-            const CustomInputField(
-              label: 'Phone Number',
-              initialValue: '+1-587-402-3641',
-            ),
-            const SizedBox(height: 20),
-            CustomInputField(
-              label: 'Date of Birth',
-              hintText: '12/05/1982',
-              icon: Icons.calendar_today_outlined,
-              readOnly: true,
-              onTap: () {},
-            ),
-            const SizedBox(height: 20),
-            CustomInputField(
-              label: 'Country',
-              initialValue: 'Canada',
-              icon: Icons.arrow_drop_down,
-              readOnly: true,
-              onTap: () {},
-            ),
-            const Spacer(),
-            CustomButton.elevated(
-              text: 'Continue',
-              textStyle: FontStyles.bodyLarge.copyWith(color: AppColor.white),
-              height: 60,
-              width: double.infinity,
-              colorFill: AppColor.primary300,
-              onPressed: () {
-                Navigator.push(context, CreateAccountScreen.route());
-              },
-              boxShadow: [
-                BoxShadow(
-                  color: AppColor.greyscale900.withOpacity(0.2),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            const SizedBox(height: 30),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Complete Your Profile',
+                style: FontStyles.heading3SemiBold,
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                "Don't worry, only you can see your personal data. No one else will be able to see it.",
+                style: FontStyles.bodyRegular,
+              ),
+              const SizedBox(height: 30),
+              const Center(
+                child: ProfileIcon(imageUrl: 'assets/images/person.png'),
+              ),
+              const SizedBox(height: 15),
+              const CustomInputField(
+                label: 'Full Name',
+                initialValue: 'Dr. Emmanuel Adewusi',
+              ),
+              const SizedBox(height: 20),
+              const CustomInputField(
+                label: 'Phone Number',
+                initialValue: '+1-587-402-3641',
+              ),
+              const SizedBox(height: 20),
+              CustomInputField(
+                label: 'Date of Birth',
+                hintText: '12/05/1982',
+                icon: Icons.calendar_today_outlined,
+                readOnly: true,
+                onTap: () {},
+              ),
+              const SizedBox(height: 20),
+              CustomInputField(
+                label: 'Country',
+                initialValue: 'Canada',
+                icon: Icons.arrow_drop_down,
+                readOnly: true,
+                onTap: () {},
+              ),
+              // const Spacer(),
+              const SizedBox(height: 30),
+              CustomButton.elevated(
+                text: 'Continue',
+                textStyle: FontStyles.bodyLarge.copyWith(color: AppColor.white),
+                height: 60,
+                width: double.infinity,
+                colorFill: AppColor.primary300,
+                onPressed: () {
+                  Navigator.push(context, CreateAccountScreen.route());
+                },
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColor.greyscale900.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );

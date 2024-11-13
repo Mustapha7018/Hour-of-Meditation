@@ -19,87 +19,73 @@ class GetStartedScreen extends StatelessWidget {
       backgroundColor: AppColor.primary200,
       body: Padding(
         padding: BodyPadding.defaultPadding,
-        child: Expanded(
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Image.asset('assets/images/big_sphere.png'),
-                  const SizedBox(
-                    height: 30,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Image.asset('assets/images/big_sphere.png'),
+                const SizedBox(height: 30),
+                Text(
+                  'Hour Of\nMeditation',
+                  textAlign: TextAlign.center,
+                  style: FontStyles.heading1.copyWith(
+                    color: AppColor.primary400,
+                    fontWeight: FontWeight.normal,
                   ),
-                  Text(
-                    'Hour Of\nMeditation',
-                    textAlign: TextAlign.center,
-                    style: FontStyles.heading1.copyWith(
-                      color: AppColor.primary400,
-                      fontWeight: FontWeight.normal,
-                    ),
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  'Discover the profound impact of guided Christian meditation. Welcome HoM.',
+                  textAlign: TextAlign.center,
+                  style: FontStyles.bodyXLarge.copyWith(
+                    color: AppColor.primary400,
+                    fontWeight: FontWeight.normal,
+                    letterSpacing: 0.2,
                   ),
-                  const SizedBox(
-                    height: 30,
+                ),
+                const SizedBox(height: 30),
+                const StepProgressIndicator(
+                  currentStep: 0,
+                  totalSteps: 5,
+                  dotSize: 8,
+                  spacing: 6,
+                  activeColor: AppColor.gradientPrimary,
+                ),
+                const SizedBox(height: 30),
+                CustomButton.elevated(
+                  icon: Image.asset('assets/icons/google_img.png'),
+                  iconTextSpacing: 12,
+                  text: 'Continue with Google',
+                  textStyle: FontStyles.bodySemibold
+                      .copyWith(color: AppColor.greyscale900),
+                  height: 60,
+                  width: double.infinity,
+                  colorFill: AppColor.white,
+                  onPressed: () {},
+                ),
+                const SizedBox(height: 16),
+                CustomButton.elevated(
+                  text: 'Get started',
+                  textStyle:
+                      FontStyles.bodyLarge.copyWith(color: AppColor.white),
+                  height: 60,
+                  width: double.infinity,
+                  colorFill: AppColor.primary300,
+                  onPressed: () {
+                    Navigator.push(context, ChooseGenderScreen.route());
+                  },
+                ),
+                const SizedBox(height: 30),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context, SignInScreen.route());
+                  },
+                  child: const Text(
+                    'I Already Have an Account',
+                    style: FontStyles.bodyLarge,
                   ),
-                  Text(
-                    'Discover the profound impact of guided Christian meditation. Welcome HoM.',
-                    textAlign: TextAlign.center,
-                    style: FontStyles.bodyXLarge.copyWith(
-                      color: AppColor.primary400,
-                      fontWeight: FontWeight.normal,
-                      letterSpacing: 0.2,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const StepProgressIndicator(
-                    currentStep: 0,
-                    totalSteps: 5,
-                    dotSize: 8,
-                    spacing: 6,
-                    activeColor: AppColor.gradientPrimary,
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  CustomButton.elevated(
-                    icon: Image.asset('assets/icons/google_img.png'),
-                    iconTextSpacing: 12,
-                    text: 'Continue with Google',
-                    textStyle: FontStyles.bodySemibold
-                        .copyWith(color: AppColor.greyscale900),
-                    height: 60,
-                    width: double.infinity,
-                    colorFill: AppColor.white,
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  CustomButton.elevated(
-                    text: 'Get started',
-                    textStyle:
-                        FontStyles.bodyLarge.copyWith(color: AppColor.white),
-                    height: 60,
-                    width: double.infinity,
-                    colorFill: AppColor.primary300,
-                    onPressed: () {
-                      Navigator.push(context, ChooseGenderScreen.route());
-                    },
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context, SignInScreen.route());
-                    },
-                    child: const Text(
-                      'I Already Have an Account',
-                      style: FontStyles.bodyLarge,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
