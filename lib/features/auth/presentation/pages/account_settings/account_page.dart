@@ -30,102 +30,104 @@ class AccountScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: BodyPadding.medium,
-        child: Column(
-          children: [
-            Row(
-              children: [
-                // Profile Image
-                const CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/images/person.png'),
-                ),
-                const SizedBox(width: 12),
-
-                // Name and Email
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Emmanuel Adewusi',
-                        style: FontStyles.heading4.copyWith(
-                          color: AppColor.primary400,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'emmanuel.adewusi@cccghq.org',
-                        style: FontStyles.bodyMedium.copyWith(
-                          color: AppColor.greyscale800,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  // Profile Image
+                  const CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/person.png'),
                   ),
-                ),
+                  const SizedBox(width: 12),
 
-                // Edit Icon
-                InkWell(
-                  child: Image.asset('assets/icons/edit.png'),
-                  onTap: () {},
-                ),
-              ],
-            ),
-            const Divider(
-              height: 30,
-              color: AppColor.greyscale200,
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            ProfileOptionTile(
-              label: 'Personal Info',
-              imagePath: 'assets/images/user.png',
-              onTap: () {
-                Navigator.push(context, PersonalInfoScreen.route());
-              },
-            ),
-            ProfileOptionTile(
-              label: 'Notification',
-              imagePath: 'assets/icons/bell_filled.png',
-              onTap: () {
-                Navigator.push(context, NotificationScreen.route());
-              },
-            ),
-            ProfileOptionTile(
-              label: 'Security',
-              imagePath: 'assets/icons/shield_filled.png',
-              onTap: () {
-                Navigator.push(context, SecurityScreen.route());
-              },
-            ),
-            const Divider(
-              height: 40,
-              color: AppColor.greyscale200,
-            ),
-            ProfileOptionTile(
-              label: 'Help Center',
-              imagePath: 'assets/icons/file_filled.png',
-              onTap: () {
-                Navigator.push(context, HelpCenterScreen.route());
-              },
-            ),
-            ProfileOptionTile(
-              label: 'About Hour Of Meditation',
-              imagePath: 'assets/icons/info_filled.png',
-              onTap: () {
-                Navigator.push(context, AboutScreen.route());
-              },
-            ),
-            ProfileOptionTile(
-              label: 'Logout',
-              imagePath: 'assets/icons/logout_filled.png',
-              onTap: () {
-                _showLogoutConfirmation(context);
-              },
-            ),
-          ],
+                  // Name and Email
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Emmanuel Adewusi',
+                          style: FontStyles.heading4.copyWith(
+                            color: AppColor.primary400,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'emmanuel.adewusi@cccghq.org',
+                          style: FontStyles.bodyMedium.copyWith(
+                            color: AppColor.greyscale800,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Edit Icon
+                  InkWell(
+                    child: Image.asset('assets/icons/edit.png'),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              const Divider(
+                height: 30,
+                color: AppColor.greyscale200,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              ProfileOptionTile(
+                label: 'Personal Info',
+                imagePath: 'assets/images/user.png',
+                onTap: () {
+                  Navigator.push(context, PersonalInfoScreen.route());
+                },
+              ),
+              ProfileOptionTile(
+                label: 'Notification',
+                imagePath: 'assets/icons/bell_filled.png',
+                onTap: () {
+                  Navigator.push(context, NotificationScreen.route());
+                },
+              ),
+              ProfileOptionTile(
+                label: 'Security',
+                imagePath: 'assets/icons/shield_filled.png',
+                onTap: () {
+                  Navigator.push(context, SecurityScreen.route());
+                },
+              ),
+              const Divider(
+                height: 40,
+                color: AppColor.greyscale200,
+              ),
+              ProfileOptionTile(
+                label: 'Help Center',
+                imagePath: 'assets/icons/file_filled.png',
+                onTap: () {
+                  Navigator.push(context, HelpCenterScreen.route());
+                },
+              ),
+              ProfileOptionTile(
+                label: 'About Hour Of Meditation',
+                imagePath: 'assets/icons/info_filled.png',
+                onTap: () {
+                  Navigator.push(context, AboutScreen.route());
+                },
+              ),
+              ProfileOptionTile(
+                label: 'Logout',
+                imagePath: 'assets/icons/logout_filled.png',
+                onTap: () {
+                  _showLogoutConfirmation(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
